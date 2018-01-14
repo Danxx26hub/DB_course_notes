@@ -12,3 +12,21 @@ Adding or inserting into a database you can either show the columns or decide no
 insert into animals (name, species, birthdate) values ('Peggy', 'opossum', '2018-01-14');
 
 insert into animals values ('Peggy', 'opossum', '2018-01-14');
+
+using a join "shortcut"
+
+
+select name from animals, diet where animals.species = diet.species and food = 'fish';
+
+having is used to filter out numbers to count, do not use "where" 
+
+example:
+
+select species, count(*) as num from animals group by species having num = 1;
+
+"where " is a restriction on the source tables
+"having" is a restriction on the result after aggregation
+
+another example of a join and count:
+
+select food, count(*) as num from animals join diet on animals.species = diet.species group by food having num = 1;
