@@ -1,0 +1,14 @@
+SQL sample queries
+
+
+select count(*) as num, species from animals group by species order by num desc;
+
+will select and count in a num column all species in the zoo the group and order by desc.
+
+
+
+Adding or inserting into a database you can either show the columns or decide not too.
+
+insert into animals (name, species, birthdate) values ('Peggy', 'opossum', '2018-01-14');
+
+insert into animals values ('Peggy', 'opossum', '2018-01-14');
